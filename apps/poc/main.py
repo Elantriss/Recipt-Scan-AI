@@ -10,7 +10,7 @@ load_dotenv()
 class ReciptSchema(BaseModel):
     company: str = Field(description='Nome ou razão social da empresa/estabelecimento')
     total_value: Decimal = Field(description='Valor total pago na nota fiscal')
-    date_issue: str = Field(description='Data de emissão no formato YYYY-MM-DD')
+    date: str = Field(description='Data de emissão no formato YYYY-MM-DD')
 
 def extract_data(image: str):
     client = genai.Client(api_key=os.getenv('GEMINI_API_KEY'))
